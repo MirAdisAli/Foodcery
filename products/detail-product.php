@@ -1,138 +1,24 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Foodcery | Groceries Store</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
-    <link href="assets/fonts/sb-bistro/sb-bistro.css" rel="stylesheet" type="text/css">
-    <link href="assets/fonts/font-awesome/font-awesome.css" rel="stylesheet" type="text/css">
+<?php require "../includes/header.php"; ?>
+<?php require "../config/config.php"; ?>
+<?php
 
-    <link rel="stylesheet" type="text/css" media="all" href="assets/packages/bootstrap/bootstrap.css">
-    <link rel="stylesheet" type="text/css" media="all" href="assets/packages/o2system-ui/o2system-ui.css">
-    <link rel="stylesheet" type="text/css" media="all" href="assets/packages/owl-carousel/owl-carousel.css">
-    <link rel="stylesheet" type="text/css" media="all" href="assets/packages/cloudzoom/cloudzoom.css">
-    <link rel="stylesheet" type="text/css" media="all" href="assets/packages/thumbelina/thumbelina.css">
-    <link rel="stylesheet" type="text/css" media="all" href="assets/packages/bootstrap-touchspin/bootstrap-touchspin.css">
-    <link rel="stylesheet" type="text/css" media="all" href="assets/css/theme.css">
 
-</head>
-<body>
-    <div class="page-header">
-        <!--=============== Navbar ===============-->
-        <nav class="navbar fixed-top navbar-expand-md navbar-dark bg-transparent" id="page-navigation">
-            <div class="container">
-                <!-- Navbar Brand -->
-                <a href="index.php" class="navbar-brand">
-                    <img src="assets/img/logo/logo1.png" alt="">
-                </a>
 
-                <!-- Toggle Button -->
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarcollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+    if(isset($_GET['id'])){
+        $id = $_GET['id'];
+        $select = $conn->query("SELECT * FROM products WHERE status = 1 AND id= '$id'");
 
-                <div class="collapse navbar-collapse" id="navbarcollapse">
-                    <!-- Navbar Menu -->
-                    <ul class="navbar-nav ml-auto">
-                        <li class="nav-item">
-                            <a href="shop.html" class="nav-link">Shop</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="register.html" class="nav-link">Register</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="login.html" class="nav-link">Login</a>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="javascript:void(0)" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <div class="avatar-header"><img src="assets/img/logo/avatar.jpg"></div> John Doe
-                            </a>
-                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="transaction.html">Transactions History</a>
-                                <a class="dropdown-item" href="setting.html">Settings</a>
-                            </div>
-                          </li>
-                        <li class="nav-item dropdown">
-                            <a href="javascript:void(0)" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <i class="fa fa-shopping-basket"></i> <span class="badge badge-primary">5</span>
-                            </a>
-                            <div class="dropdown-menu shopping-cart">
-                                <ul>
-                                    <li>
-                                        <div class="drop-title">Your Cart</div>
-                                    </li>
-                                    <li>
-                                        <div class="shopping-cart-list">
-                                            <div class="media">
-                                                <img class="d-flex mr-3" src="assets/img/logo/avatar.jpg" width="60">
-                                                <div class="media-body">
-                                                    <h5><a href="javascript:void(0)">Carrot</a></h5>
-                                                    <p class="price">
-                                                        <span class="discount text-muted">Rp. 700.000</span>
-                                                        <span>Rp. 100.000</span>
-                                                    </p>
-                                                    <p class="text-muted">Qty: 1</p>
-                                                </div>
-                                            </div>
-                                            <div class="media">
-                                                <img class="d-flex mr-3" src="assets/img/logo/avatar.jpg" width="60">
-                                                <div class="media-body">
-                                                    <h5><a href="javascript:void(0)">Carrot</a></h5>
-                                                    <p class="price">
-                                                        <span class="discount text-muted">Rp. 700.000</span>
-                                                        <span>Rp. 100.000</span>
-                                                    </p>
-                                                    <p class="text-muted">Qty: 1</p>
-                                                </div>
-                                            </div>
-                                            <div class="media">
-                                                <img class="d-flex mr-3" src="assets/img/logo/avatar.jpg" width="60">
-                                                <div class="media-body">
-                                                    <h5><a href="javascript:void(0)">Carrot</a></h5>
-                                                    <p class="price">
-                                                        <span class="discount text-muted">Rp. 700.000</span>
-                                                        <span>Rp. 100.000</span>
-                                                    </p>
-                                                    <p class="text-muted">Qty: 1</p>
-                                                </div>
-                                            </div>
-                                            <div class="media">
-                                                <img class="d-flex mr-3" src="assets/img/logo/avatar.jpg" width="60">
-                                                <div class="media-body">
-                                                    <h5><a href="javascript:void(0)">Carrot</a></h5>
-                                                    <p class="price">
-                                                        <span class="discount text-muted">Rp. 700.000</span>
-                                                        <span>Rp. 100.000</span>
-                                                    </p>
-                                                    <p class="text-muted">Qty: 1</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="drop-title d-flex justify-content-between">
-                                            <span>Total:</span>
-                                            <span class="text-primary"><strong>Rp. 2000.000</strong></span>
-                                        </div>
-                                    </li>
-                                    <li class="d-flex justify-content-between pl-3 pr-3 pt-3">
-                                        <a href="cart.html" class="btn btn-default">View Cart</a>
-                                        <a href="checkout.html" class="btn btn-primary">Checkout</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
+        $product = $select->fetch(PDO::FETCH_OBJ);
 
-            </div>
-        </nav>
-    </div>
+    } else{
+
+    }
+
+?>
+
     <div id="page-content" class="page-content">
         <div class="banner">
-            <div class="jumbotron jumbotron-bg text-center rounded-0" style="background-image: url('assets/img/bg-header.jpg');">
+            <div class="jumbotron jumbotron-bg text-center rounded-0" style="background-image: url('<?php echo APPURL; ?> /assets/img/bg-header.jpg');">
                 <div class="container">
                     <h1 class="pt-5">
                         The Meat Product Title
@@ -148,27 +34,21 @@
                 <div class="row">
                     <div class="col-sm-6">
                         <div class="slider-zoom">
-                            <a href="assets/img/meats.jpg" class="cloud-zoom" rel="transparentImage: 'data:image/gif;base64,R0lGODlhAQABAID/AMDAwAAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==', useWrapper: false, showTitle: false, zoomWidth:'500', zoomHeight:'500', adjustY:0, adjustX:10" id="cloudZoom">
-                                <img alt="Detail Zoom thumbs image" src="assets/img/meats.jpg" style="width: 100%;">
+                            <a href="<?php echo APPURL; ?> /assets/img/<?php echo $product->image; ?>" class="cloud-zoom" rel="transparentImage: 'data:image/gif;base64,R0lGODlhAQABAID/AMDAwAAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==', useWrapper: false, showTitle: false, zoomWidth:'500', zoomHeight:'500', adjustY:0, adjustX:10" id="cloudZoom">
+                                <img alt="Detail Zoom thumbs image" src="<?php echo APPURL; ?>/assets/img/<?php echo $product->image; ?>" style="width: 100%;">
                             </a>
                         </div>
                     </div>
                     <div class="col-sm-6">
                         <p>
                             <strong>Overview</strong><br>
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                            proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                        </p>
+                            <?php echo $product->description; ?>
                         <div class="row">
                             <div class="col-sm-6">
                                 <p>
                                     <strong>Price</strong> (/Pack)<br>
-                                    <span class="price">Rp 100.000</span>
-                                    <span class="old-price">Rp 150.000</span>
+                                    <span class="price"> <?php echo $product->price; ?> BDT</span>
+                                    <!-- <span class="old-price">BDT 800</span> -->
                                 </p>
                             </div>
                            
@@ -178,7 +58,7 @@
                         </p>
                         <div class="row">
                             <div class="col-sm-5">
-                                <input class="form-control" type="number" min="1" data-bts-button-down-class="btn btn-primary" data-bts-button-up-class="btn btn-primary" value="1" name="vertical-spin">
+                                <input class="form-control" type="number" min="1" data-bts-button-down-class="btn btn-primary" data-bts-button-up-class="btn btn-primary" value="<?php echo $product->quantity; ?>" name="vertical-spin">
                             </div>
                             <div class="col-sm-6"><span class="pt-1 d-inline-block">Pack (1000 gram)</span></div>
                         </div>
@@ -437,19 +317,10 @@
                 </div>
             </div>
         </div>
-        <p class="copyright">&copy; 2018 Freshcery | Groceries Organic Store. All rights reserved.</p>
-    </footer>
+        <p class="copyright">&copy; 2023 Foodcery | Groceries Store. All rights reserved.</p>
 
-    <script type="text/javascript" src="assets/js/jquery.js"></script>
-    <script type="text/javascript" src="assets/js/jquery-migrate.js"></script>
-    <script type="text/javascript" src="assets/packages/bootstrap/libraries/popper.js"></script>
-    <script type="text/javascript" src="assets/packages/bootstrap/bootstrap.js"></script>
-    <script type="text/javascript" src="assets/packages/o2system-ui/o2system-ui.js"></script>
-    <script type="text/javascript" src="assets/packages/owl-carousel/owl-carousel.js"></script>
-    <script type="text/javascript" src="assets/packages/cloudzoom/cloudzoom.js"></script>
-    <script type="text/javascript" src="assets/packages/thumbelina/thumbelina.js"></script>
-    <script type="text/javascript" src="assets/packages/bootstrap-touchspin/bootstrap-touchspin.js"></script>
-    <script type="text/javascript" src="assets/js/theme.js"></script>
+    <?php require "../includes/footer.php"; ?>
+
     <script>
         $(document).ready(function() {
             $(".form-control").keyup(function(){
@@ -460,5 +331,3 @@
 
         })
     </script>
-</body>
-</html>
