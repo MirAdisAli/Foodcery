@@ -18,8 +18,8 @@
             ':pro_id' => $pro_id,
             ':pro_title' => $pro_title,
             ':pro_image' => $pro_image,
-            ':pro_price' => $pro_qty,
-            ':pro_id' => $pro_id,
+            ':pro_price' => $pro_price,
+            ':pro_qty' => $pro_qty,
             ':user_id' => $user_id,
         ]);
 
@@ -203,7 +203,7 @@
 
                     success: function(){
                         alert("product added to cart");
-                        
+                        $(".btn-insert").html("<i class= 'fa fa-shopping-basket'></i> Added tom cart").prop("disabled", true);
                     }
                 })
 
