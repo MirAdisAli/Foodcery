@@ -61,13 +61,13 @@
                                             <input class="pro_qty form-control" type="number" min="1" data-bts-button-down-class="btn btn-primary" data-bts-button-up-class="btn btn-primary" value="<?php echo $product->pro_qty; ?>" name="vertical-spin">
                                         </td>
                                         <td>
-                                            <button value="<?php echo $product->id; ?>" class="btn-update btn btn-primary">UPDATE</button>
+                                            <button value="<?php echo $product->id; ?>" class="btn-update btn btn-primary">Update</button>
                                         </td>
                                         <td class="subtotal_price">
                                             <?php echo $product->pro_price * $product->pro_qty; ?>
                                         </td>
                                         <td>
-                                            <a href="javascript:void" class="text-danger"><i class="fa fa-times"></i></a>
+                                            <button value="<?php echo $product->id; ?>" class="btn-delete btn btn-primary">Delete</button>
                                         </td>
                                     </tr>
                                     <?php endforeach; ?>
@@ -137,8 +137,8 @@
                         },
 
                         success: function() {
-                         alert("done");
-                          //reload();
+                         alert("Done");
+                         reload();
                         }
                       })
                     });
@@ -147,5 +147,30 @@
            fetch();     
           });
 
-        })
-    </script>
+                 $(".btn-delete").on('click', function(e) {
+
+                var id = $(this).val();
+
+
+                $.ajax({
+                type: "POST",
+                url: "delete-product.php",
+                data: {
+                    delete: "delete",
+                    id: id,
+                },
+
+                success: function() {
+                alert("Product Deleted Successfully");
+                reload();
+                }
+            })
+        });
+
+        function reload(){
+            $("body").load("cart.php");
+
+        }
+
+    })
+</script>
