@@ -115,7 +115,7 @@
                                         </h4>
                                         <div class="card-price">
                                             <!-- <span class="discount"> 300.000</span> -->
-                                            <span class="regular"><?php echo $allmostProduct->price; ?> BDT</span>
+                                            <span class="regular"><?php echo $allmostProduct->price; ?> ৳ </span>
                                         </div>
                                         <a href="<?php echo APPURL; ?>/products/detail-product.php?id=<?php echo $allmostProduct->id; ?>" class="btn btn-block btn-primary">
                                             Add to Cart
@@ -161,7 +161,7 @@
                                         </h4>
                                         <div class="card-price">
                                             <!-- <span class="discount"> 300.000</span> -->
-                                            <span class="regular"><?php echo $allvigi->price; ?> BDT</span>
+                                            <span class="regular"><?php echo $allvigi->price; ?> ৳ </span>
                                         </div>
                                         <a href="<?php echo APPURL; ?>/products/detail-product.php?id=<?php echo $allvigi->id; ?>" class="btn btn-block btn-primary">
                                             Add to Cart
@@ -209,7 +209,7 @@
                                         </h4>
                                         <div class="card-price">
                                             <!-- <span class="discount"> 300.000</span> -->
-                                            <span class="regular"><?php echo $meat->price; ?> BDT</span>
+                                            <span class="regular"><?php echo $meat->price; ?> ৳ </span>
                                         </div>
                                         <a href="<?php echo APPURL; ?>/products/detail-product.php?id=<?php echo $meat->id; ?>" class="btn btn-block btn-primary">
                                             Add to Cart
@@ -257,7 +257,7 @@
                                         </h4>
                                         <div class="card-price">
                                             <!-- <span class="discount"> 300.000</span> -->
-                                            <span class="regular"><?php echo $fish->price; ?> BDT</span>
+                                            <span class="regular"><?php echo $fish->price; ?> ৳ </span>
                                         </div>
                                         <a href="<?php echo APPURL; ?>/products/detail-product.php?id=<?php echo $fish->id; ?>" class="btn btn-block btn-primary">
                                             Add to Cart
@@ -305,7 +305,7 @@
                                         </h4>
                                         <div class="card-price">
                                             <!-- <span class="discount"> 300.000</span> -->
-                                            <span class="reguler"> <?php echo $fruit->price; ?> BDT</span>
+                                            <span class="reguler"> <?php echo $fruit->price; ?> ৳ </span>
                                         </div>
                                         <a href="<?php echo APPURL; ?>/products/detail-product.php?id=<?php echo $fruit->id; ?>" class="btn btn-block btn-primary">
                                             Add to Cart

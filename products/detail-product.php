@@ -8,10 +8,11 @@
         $pro_image = $_POST['pro_image'];
         $pro_price = $_POST['pro_price'];
         $pro_qty = $_POST['pro_qty'];
+        $pro_subtotal = $_POST['pro_subtotal'];
         $user_id = $_POST['user_id'];
 
         $insert = $conn->prepare("INSERT INTO cart (pro_id, pro_title, pro_image, pro_price, 
-        pro_qty, user_id) VALUES (:pro_id, :pro_title, :pro_image, :pro_price, :pro_qty, :user_id)");
+        pro_qty, pro_subtotal, user_id) VALUES (:pro_id, :pro_title, :pro_image, :pro_price, :pro_qty, :pro_subtotal, :user_id)");
 
 
         $insert->execute([
@@ -20,6 +21,7 @@
             ':pro_image' => $pro_image,
             ':pro_price' => $pro_price,
             ':pro_qty' => $pro_qty,
+            ':pro_subtotal' => $pro_subtotal,
             ':user_id' => $user_id,
         ]);
 
@@ -88,7 +90,7 @@
                             <div class="col-sm-6">
                                 <p>
                                     <strong>Price</strong> (/Pack)<br>
-                                    <span class="price"> <?php echo $product->price; ?> BDT</span>
+                                    <span class="price"> <?php echo $product->price; ?> ৳ </span>
                                     <!-- <span class="old-price">BDT 800</span> -->
                                 </p>
                             </div>
@@ -110,7 +112,7 @@
                         </div>
                         <div class="row">
                             <div class="col-sm-5">
-                                <input class="form-control" type="hidden" name="pro_price" value="<?php echo $product->price; ?>" >
+                                <input class="pro_price form-control" type="hidden" name="pro_price" value="<?php echo $product->price; ?>" >
                             </div>
                         </div>
                         <div class="row">
@@ -125,9 +127,14 @@
                         </div>
                         <div class="row">
                             <div class="col-sm-5">
-                                <input class="form-control" type="number" min="1" data-bts-button-down-class="btn btn-primary" data-bts-button-up-class="btn btn-primary" value="<?php echo $product->quantity; ?>" name="pro_qty">
+                                <input class="pro_qty form-control" type="number" min="1" data-bts-button-down-class="btn btn-primary" data-bts-button-up-class="btn btn-primary" value="<?php echo $product->quantity; ?>" name="pro_qty">
                             </div>
                             <div class="col-sm-6"><span class="pt-1 d-inline-block">Pack (1000 gram)</span></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-5">
+                                <input class="subtotal_price form-control" type="hidden" name="pro_subtotal" value="<?php echo $product->price * $product->quantity; ?>" >
+                            </div>
                         </div>
                         <?php if(isset($_SESSION['username'])) : ?>
                         <?php if($validate->rowCount()>0) : ?>
@@ -181,7 +188,7 @@
                                         </h4>
                                         <div class="card-price">
                                             <!-- <span class="discount"> 300.000</span> -->
-                                            <span class="regular"><?php echo $products->price; ?> BDT</span>
+                                            <span class="regular"><?php echo $products->price; ?> ৳ </span>
                                         </div>
                                         <a href="<?php echo APPURL;?>/products/detail-product.php?id=<?php echo $products->id; ?>" class="btn btn-block btn-primary">
                                             Add to Cart
@@ -224,7 +231,25 @@
                     }
                 })
 
-            })
+            });
+            $(".pro_qty").mouseup(function () {
+                  
+                 
+
+                  var $el = $(this).closest('form');
+  
+  
+                    var pro_qty = $el.find(".pro_qty").val();
+                    var pro_price = $el.find(".pro_price").val();
+                      
+                    var subtotal = pro_qty * pro_price;
+                    //alert(subtotal);
+                    $el.find(".subtotal_price").val("");        
+  
+                    $el.find(".subtotal_price").val(subtotal);
+              });
+  
+
 
         })
     </script>
