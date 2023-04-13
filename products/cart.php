@@ -39,7 +39,7 @@
                                         <th>Price in BDT</th>
                                         <th width="15%">Quantity</th>
                                         <th width="15%">Update</th>
-                                        <th>Subtotal</th>
+                                        <th>Subtotal in BDT</th>
                                         <th>Delete</th>
                                     </tr>
                                 </thead>
@@ -61,7 +61,7 @@
                                             <input class="pro_qty form-control" type="number" min="1" data-bts-button-down-class="btn btn-primary" data-bts-button-up-class="btn btn-primary" value="<?php echo $product->pro_qty; ?>" name="vertical-spin">
                                         </td>
                                         <td>
-                                            <a href="#" class="btn btn-primary">UPDATE</a>
+                                            <button value="<?php echo $product->id; ?>" class="btn-update btn btn-primary">UPDATE</button>
                                         </td>
                                         <td class="subtotal_price">
                                             <?php echo $product->pro_price * $product->pro_qty; ?>
@@ -117,31 +117,34 @@
                   var subtotal = pro_qty * pro_price;
                   $el.find(".subtotal_price").html("");        
 
-                  $el.find(".subtotal_price").append(subtotal +'৳');
+                  $el.find(".subtotal_price").append(subtotal);
 
-        //           $(".btn-update").on('click', function(e) {
 
-        //               var id = $(this).val();
+
+                  $(".btn-update").on('click', function(e) {
+
+                      var id = $(this).val();
                     
 
-        //               $.ajax({
-        //                 type: "POST",
-        //                 url: "update-item.php",
-        //                 data: {
-        //                   update: "update",
-        //                   id: id,
-        //                   pro_amount: pro_amount
-        //                 },
+                      $.ajax({
+                        type: "POST",
+                        url: "update-product.php",
+                        data: {
+                          update: "update",
+                          id: id,
+                          pro_qty: pro_qty,
+                          subtotal: subtotal
+                        },
 
-        //                 success: function() {
-        //                  // alert("done");
-        //                   //reload();
-        //                 }
-        //               })
-        //             });
+                        success: function() {
+                         alert("done");
+                          //reload();
+                        }
+                      })
+                    });
                  
                 
-        //    fetch();     
+           fetch();     
           });
 
         })
