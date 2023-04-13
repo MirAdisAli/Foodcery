@@ -25,9 +25,6 @@
 
 
     }
-
-
-
     if(isset($_GET['id'])){
         $id = $_GET['id'];
         $select = $conn->query("SELECT * FROM products WHERE status = 1 AND id= '$id'");
@@ -49,7 +46,7 @@
 
     //validating cart products
     if(isset($_SESSION['user_id'])){
-        $validate = $conn->query("SELECT *FROM cart WHERE pro_id='$id' AND user_id= '$_SESSION[user_id]'");
+        $validate = $conn->query("SELECT * FROM cart WHERE pro_id='$id' AND user_id = '$_SESSION[user_id]'");
         $validate->execute();
     }
 
@@ -121,7 +118,6 @@
                                 <input class="form-control" type="hidden" name="user_id" value="<?php echo $_SESSION['user_id']; ?>" >
                             </div>
                         </div>
-
                         <div class="row">
                             <div class="col-sm-5">
                                 <input class="form-control" type="hidden" name="pro_id" value="<?php echo $product->id; ?>" >
@@ -133,6 +129,7 @@
                             </div>
                             <div class="col-sm-6"><span class="pt-1 d-inline-block">Pack (1000 gram)</span></div>
                         </div>
+                        <?php if(isset($_SESSION['username'])) : ?>
                         <?php if($validate->rowCount()>0) : ?>
                         <button name="submit" type="submit" class="btn-insert mt-3 btn btn-primary btn-lg" disabled>
                             <i class="fa fa-shopping-basket"></i> Added to Cart
@@ -142,6 +139,11 @@
                             <i class="fa fa-shopping-basket"></i> Add to Cart
                         </button>
                         <?php endif; ?>
+                    <?php else: ?>
+                            <div class="mt-5 alert alert-success bg-success text-white text-center">
+                                log in to buy this product or add it to cart
+                            </div>
+                            <?php endif; ?>
                     </form> 
                     </div>
                 </div>
@@ -218,7 +220,7 @@
 
                     success: function(){
                         alert("product added to cart");
-                        $(".btn-insert").html("<i class= 'fa fa-shopping-basket'></i> Added tom cart").prop("disabled", true);
+                        $(".btn-insert").html("<i class= 'fa fa-shopping-basket'></i> Added to cart").prop("disabled", true);
                     }
                 })
 
