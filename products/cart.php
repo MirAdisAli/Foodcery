@@ -88,7 +88,7 @@
                     <div class="col text-right">
                    
                         <div class="clearfix"></div>
-                        <h6 class="mt-3">Total: Rp 180.000</h6>
+                        <h6 class="full_price mt-3"></h6>
                         <a href="checkout.html" class="btn btn-lg btn-primary">Checkout <i class="fa fa-long-arrow-right"></i></a>
                     </div>
                 </div>
@@ -137,7 +137,7 @@
                         },
 
                         success: function() {
-                         alert("Done");
+                         //alert("Done");
                          reload();
                         }
                       })
@@ -161,11 +161,25 @@
                 },
 
                 success: function() {
-                alert("Product Deleted Successfully");
+                //alert("Product Deleted Successfully");
                 reload();
                 }
             })
         });
+
+        fetch();
+        function fetch() {
+
+        setInterval(function () {
+          var sum = 0.0;
+          $('.subtotal_price').each(function()
+          {
+              sum += parseFloat($(this).text());
+          });
+          $(".full_price").html('Total Price: '+sum+" ৳");
+       
+        }, 4000);
+       } 
 
         function reload(){
             $("body").load("cart.php");
