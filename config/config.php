@@ -12,16 +12,16 @@
 try {
     
      //host
-     define("HOST", "localhost");
+     if(!defined('HOST')) define("HOST", "localhost");
 
      //dbname
-     define("DBNAME", "foodcery");
+     if(!defined('DBNAME')) define("DBNAME", "foodcery");
 
-    //user
-    define("USER", "root");
+     //user
+     if(!defined('USER')) define("USER", "root");
 
      //pass
-     define("PASS", "");
+     if(!defined('PASS')) define("PASS", "");
 
      $conn = new PDO("mysql: host=".HOST.";dbname=".DBNAME. ";",USER, PASS);
      $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
