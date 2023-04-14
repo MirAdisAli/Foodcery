@@ -9,22 +9,17 @@
                     <h5>Links</h5>
                     <ul>
                         <li>
-                            <a href="about.html">About</a>
+                            <a href="#">About</a>
                         </li>
                         <li>
-                            <a href="contact.html">Contact Us</a>
+                            <a href="#">Contact Us</a>
+                        </li>
+
+                        <li>
+                            <a href="#">Terms</a>
                         </li>
                         <li>
-                            <a href="faq.html">FAQ</a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0)">How it Works</a>
-                        </li>
-                        <li>
-                            <a href="terms.html">Terms</a>
-                        </li>
-                        <li>
-                            <a href="privacy.html">Privacy Policy</a>
+                            <a href="#">Privacy Policy</a>
                         </li>
                     </ul>
                 </div>
@@ -58,11 +53,6 @@
                          <li class="download-app">
                              <a href="#"><img src="<?php echo APPURL; ?>/assets/img/playstore.png"></a>
                          </li>
-                         <!-- <li style="height: 200px">
-                             <div class="mockup">
-                                 <img src="<?php echo APPURL; ?>/assets/img/mockup.png">
-                             </div>
-                         </li> -->
                      </ul>
                 </div>
             </div>

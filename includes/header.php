@@ -63,13 +63,6 @@
                             <a href="<?php echo APPURL;?>/shop.php" class="nav-link">Shop</a>
                         </li>
 
-                        <li class="nav-item">
-                            <a href="<?php echo APPURL;?>/faq.php" class="nav-link">FAQ</a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a href="<?php echo APPURL;?>/contact.php" class="nav-link">Contact</a>
-                        </li>
 
                         <?php if(!isset($_SESSION['username'])) : ?>
                         <li class="nav-item">
