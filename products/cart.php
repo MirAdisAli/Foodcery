@@ -2,6 +2,10 @@
 <?php require "../config/config.php"; ?>
 <?php
 
+    if(!isset($_SESSION['username'])){
+    echo "<script> window.location.href='".APPURL."'; </script>";
+    }
+
     $products =$conn->query("SELECT * FROM cart WHERE user_id='$_SESSION[user_id]'");
     $products->execute();
 

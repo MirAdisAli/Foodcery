@@ -1,6 +1,21 @@
+<?php 
+
+    if(!isset($_SERVER['HTTP_REFERER'])){
+       // redirect them to your desired location
+       header('location: http://localhost/foodcery/index.php');
+    exit;
+    } 
+
+
+?>
+
 <?php require "../includes/header.php"; ?>
 <?php require "../config/config.php"; ?>
-<?php 
+<?php
+
+     if(!isset($_SESSION['username'])){
+    echo "<script> window.location.href='".APPURL."'; </script>";
+    }
 
     $products =$conn->query("SELECT * FROM cart WHERE user_id='$_SESSION[user_id]'");
     $products->execute();

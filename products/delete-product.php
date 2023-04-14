@@ -1,8 +1,22 @@
+<?php 
+
+    if(!isset($_SERVER['HTTP_REFERER'])){
+       // redirect them to your desired location
+       header('location: http://localhost/foodcery/index.php');
+    exit;
+    } 
+
+
+?>
 <?php require "../includes/header.php"; ?>
 <?php require "../config/config.php"; ?>
 
 
 <?php  
+
+    if(!isset($_SESSION['username'])){
+        echo "<script> window.location.href='".APPURL."'; </script>";
+    }
 
     if(isset($_POST['delete'])) {
         
