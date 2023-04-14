@@ -55,6 +55,9 @@
         $validate = $conn->query("SELECT * FROM cart WHERE pro_id='$id' AND user_id = '$_SESSION[user_id]'");
         $validate->execute();
     }
+    else{
+        echo "<script> window.location.href='".APPURL."/404.php'; </script>";
+    }
 
 
 
