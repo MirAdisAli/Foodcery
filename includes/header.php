@@ -79,7 +79,7 @@
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <a class="dropdown-item" href="<?php echo APPURL;?>/users/transaction.php?id=<?php echo $_SESSION['user_id']; ?>">Transactions History</a>
-                                <a class="dropdown-item" href="<?php echo APPURL;?>/setting.php">Settings</a>
+                                <a class="dropdown-item" href="<?php echo APPURL;?>/users/setting.php?id=<?php echo $_SESSION['user_id']; ?>">Settings</a>
                                 <a class="dropdown-item" href="<?php echo APPURL; ?>/auth/logout.php">Log out</a>
                             </div>
                         </li>
