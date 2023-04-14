@@ -64,7 +64,7 @@
                 <div class="row justify-content-center">
                     <div class="col-xs-12 col-sm-6">
                         <h5 class="mb-3">ACCOUNT DETAILS</h5>
-                        <!-- Bill Detail of the Page -->
+
                         <form action="setting.php?id=<?php echo $id; ?>" method="POST" class="bill-detail">
                             <fieldset>
                                 <div class="form-group row">
@@ -96,7 +96,7 @@
                                 </div>
                             </fieldset>
                         </form>
-                        <!-- Bill Detail of the Page end -->
+
                     </div>
                 </div>
             </div>
