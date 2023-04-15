@@ -10,11 +10,7 @@
     <div id="page-content" class="page-content">
         <div class="banner">
         <div class="jumbotron jumbotron-bg text-center rounded-0" style="background-image: url('assets/img/header3.jpg');">
-            <!-- <div class="jumbotron jumbotron-video text-center bg-dark mb-0 rounded-0">
-                <video width="100%" preload="auto" loop autoplay muted>
-                    <source src='assets/media/explore.mp4' type='video/mp4' />
-                    <source src='assets/media/explore.webm' type='video/webm' />
-                </video> -->
+
                 <div class="container">
                     <h1 class="pt-5">
                         Save time and leave the<br>
@@ -23,61 +19,6 @@
                     <p class="lead">
                         Always Fresh Everyday.
                     </p>
-
-                    <!-- <div class="row">
-                        <div class="col-md-4">
-                            <div class="card border-0 text-center">
-                                <div class="card-icon">
-                                    <div class="card-icon-i">
-                                        <i class="fa fa-shopping-basket"></i>
-                                    </div>
-                                </div>
-                                <div class="card-body">
-                                    <h4 class="card-title">
-                                        Buy
-                                    </h4>
-                                    <p class="card-text">
-                                        Simply click-to-buy on the product you want and submit your order when you're done.
-                                    </p>
-
-                                </div>
-                            </div>
-                        </div> -->
-                        <!-- <div class="col-md-4">
-                            <div class="card border-0 text-center">
-                                <div class="card-icon">
-                                    <div class="card-icon-i">
-                                        <i class="fas fa-leaf"></i>
-                                    </div>
-                                </div>
-                                <div class="card-body">
-                                    <h4 class="card-title">
-                                        Harvest
-                                    </h4>
-                                    <p class="card-text">
-                                        Our team ensures the produce quality is up to our standard and delivers to your door within 24 hours of harvest day.
-                                    </p>
-
-                                </div>
-                            </div>
-                        </div> -->
-                        <!-- <div class="col-md-4">
-                            <div class="card border-0 text-center">
-                                <div class="card-icon">
-                                    <div class="card-icon-i">
-                                        <i class="fa fa-truck"></i>
-                                    </div>
-                                </div>
-                                <div class="card-body">
-                                    <h4 class="card-title">
-                                        Delivery
-                                    </h4>
-                                    <p class="card-text">
-                                        Farmers receive your orders two days in advance so they can prepare for harvest exactly as your orders – no wasted produce.
-                                    </p>
-                                </div>
-                            </div>
-                        </div> -->
                     </div>
                 </div>
             </div>
