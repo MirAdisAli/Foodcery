@@ -12,9 +12,9 @@
      if(isset($_GET['id'])){
         $id = $_GET['id'];
 
-        if($id !== $_SESSION['user_id']){  
-            echo "<script> window.location.href='".APPURL."'; </script>";
-        }
+        // if($id !== $_SESSION['user_id']){  
+        //     echo "<script> window.location.href='".APPURL."'; </script>";
+        // }
 
         $select = $conn->query("SELECT * FROM orders WHERE user_id='$id'");
         $select->execute();
@@ -35,7 +35,7 @@
 
     <div id="page-content" class="page-content">
         <div class="banner">
-            <div class="jumbotron jumbotron-bg text-center rounded-0" style="background-image: url('<?php echo APPURL; ?>/assets/img/bg-header.jpg');">
+            <div class="jumbotron jumbotron-bg text-center rounded-0" style="background-image: url('<?php echo APPURL; ?>/assets/img/header3.jpg');">
                 <div class="container">
                     <h1 class="pt-5">
                         Your Transactions
